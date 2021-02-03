@@ -1,0 +1,85 @@
+ @() @main("Welcome") { @defining(play.core.PlayVersion.current) { version =>
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-9"> <input type="text" name="ade" class="form-control" id="ade" placeholder="Socket"></div>
+            <div class="col-md-3"><button onclick="setsoket()" class="btn btn-danger">Set Soket</button></div>
+        </div>
+        <hr>
+        <div class="messaging">
+            <div class="inbox_msg">
+
+                <div class="mesgs">
+                    <div class="msg_history">
+                        <div class="incoming_msg">
+                            <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                            <div class="received_msg">
+                                <div class="received_withd_msg">
+                                    <p>Test which is a new approach to have all solutions
+                                    </p>
+                                    <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                            </div>
+                        </div>
+                        <div class="outgoing_msg">
+                            <div class="sent_msg">
+                                <p>Test which is a new approach to have all solutions
+                                </p>
+                                <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                        </div>
+
+                    </div>
+                    <div class="type_msg">
+                        <div class="input_msg_write">
+                            <form>
+                                <input type="text" style="outline: none;" class="write_msg" placeholder="Type a message" />
+                                <button style="outline: none;" class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+
+</div>
+
+<script>
+    var soket = 0;
+    $('#clientku').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/minta',
+            type: 'GET',
+            data: $(this).serialize(),
+            success: function(data) {
+                $('.response').html(data)
+            }
+        });
+    })
+
+    function setsoket() {
+        var a = $('#ade').val();
+        soket = a;
+        alert(a)
+    }
+
+    setInterval(function() {
+        $.ajax({
+            url: '/jalanserver',
+            type: 'GET',
+            data: $(this).serialize(),
+            success: function(data) {
+                $('.response2').html(data)
+            }
+        });
+    }, 1000);
+</script>
+} }

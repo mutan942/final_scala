@@ -1,0 +1,5 @@
+[debug] Copy resource mappings: 
+[debug] 	(D:\Utama\Semester 7\Scala\scala_final\conf\application.conf,D:\Utama\Semester 7\Scala\scala_final\target\scala-2.13\classes\application.conf)
+[debug] 	(D:\Utama\Semester 7\Scala\scala_final\conf\logback.xml,D:\Utama\Semester 7\Scala\scala_final\target\scala-2.13\classes\logback.xml)
+[debug] 	(D:\Utama\Semester 7\Scala\scala_final\conf\messages,D:\Utama\Semester 7\Scala\scala_final\target\scala-2.13\classes\messages)
+[debug] 	(D:\Utama\Semester 7\Scala\scala_final\conf\routes,D:\Utama\Semester 7\Scala\scala_final\target\scala-2.13\classes\routes)

@@ -1,0 +1,3 @@
+Segitiga:alas = 5 tinggi = 5:12
+Lingkaran:jari-jari = 7:153.93804002589985
+Segitiga:alas = 4 tinggi = 5:10

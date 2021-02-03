@@ -1,0 +1,106 @@
+ @() @main("Welcome") { @defining(play.core.PlayVersion.current) { version =>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card"><br>
+            <div class="card-body">
+                <h5>Segitiga</h5>
+                <hr>
+                <form id="segitiga">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Alas</label>
+                        <input name="alas" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Tinggi</label>
+                        <input name="tinggi" type="number" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Luas</label>
+                        <input id="h_segitiga" readonly type="number" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hitung dan Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Lingkaran</h5>
+                <hr>
+                <form id="lingkaran">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Jari jari</label>
+                        <input name="jari" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Luas</label>
+                        <input id="h_lingkaran" readonly type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hitung dan Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Persegi Panjang</h5>
+                <hr>
+                <form id="persegipanjang">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Panjang</label>
+                        <input name="panjang" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Lebar</label>
+                        <input name="lebar" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Luas</label>
+                        <input id="h_pp" readonly type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hitung dan Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#segitiga').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/hitung_s',
+            type: 'GET',
+            data: $(this).serialize(),
+            success: function(data) {
+                $('#h_segitiga').val(data)
+            }
+        });
+    })
+
+    $('#lingkaran').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/hitung_l',
+            type: 'GET',
+            data: $(this).serialize(),
+            success: function(data) {
+                $('#h_lingkaran').val(data)
+            }
+        });
+    })
+
+    $('#persegipanjang').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/hitung_p',
+            type: 'GET',
+            data: $(this).serialize(),
+            success: function(data) {
+                $('#h_pp').val(data)
+            }
+        });
+    })
+</script>
+} }

@@ -1,0 +1,39 @@
+ @() @main("Welcome") { @defining(play.core.PlayVersion.current) { version =>
+<div class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5>History Kegiatan</h5>
+                    <hr>
+                    <table id="myTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Geometri</th>
+                                <th scope="col">Ukuran</th>
+                                <th scope="col">Luas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyku">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $.ajax({
+        url: '/hhh',
+        type: 'GET',
+        data: $(this).serialize(),
+        success: function(data) {
+            $('#bodyku').html(data)
+            $('#myTable').DataTable();
+        }
+    });
+</script>
+} }

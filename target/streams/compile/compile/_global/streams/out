@@ -1,0 +1,7 @@
+[error] D:\Utama\Semester 7\Scala\scala_final\app\controllers\ClientSocket.scala:59:282: not found: value tgl
+[error]           hasil = "<div class='incoming_msg bg-danger'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>Gagal terkoneksi keserver</p><span class='time_date'>"+tgl+"</span></div></div></div>"
+[error]                                                                                                                                                                                                                                                                                          ^
+[error] D:\Utama\Semester 7\Scala\scala_final\app\controllers\ClientSocket.scala:62:301: not found: value tgl
+[error]         case e: Exception => hasil = "<div class='incoming_msg bg-danger'><div class='incoming_msg_img'> <img src='https://ptetutorials.com/images/user-profile.png' alt='sunil'> </div><div class='received_msg'><div class='received_withd_msg'><p>Gagal terkoneksi keserver</p><span class='time_date'>"+tgl+"</span></div></div></div>"
+[error]                                                                                                                                                                                                                                                                                                             ^
+[error] two errors found
